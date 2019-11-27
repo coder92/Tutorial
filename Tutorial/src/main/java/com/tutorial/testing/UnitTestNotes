@@ -1,0 +1,4 @@
+----Annotation---
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ContextConfiguration(classes={TaxService.class, TaxBracketService.class}) // only these classes will be initialised
