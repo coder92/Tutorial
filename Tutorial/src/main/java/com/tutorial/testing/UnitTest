@@ -1,0 +1,20 @@
+annotations
+    {
+        @Mock
+	    NoSQLDataParser classObj ;
+	
+        @Rule 
+        public MockitoRule mockitoRule = MockitoJUnit.rule(); 
+
+        @Test
+    }
+
+invoke private method
+    {
+        
+    }
+Error
+    {
+        Unexpected error (Mockito can only mock non-private & non-final classes.) 
+           use byte-buddy 1.9.7 or higher
+    }

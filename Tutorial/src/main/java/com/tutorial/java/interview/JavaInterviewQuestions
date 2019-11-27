@@ -1,0 +1,72 @@
+What is Encapsulation?
+	Ans: Purpose of Encapsulation:
+	Protects the code from others.
+	Code maintainability.
+	-by providing setter-getter
+
+What is Polymorphism?
+	Ans: Polymorphism means many forms. - parent-child class / overriding
+
+Overriding
+	Ans: Method overriding happens if the sub class method satisfies the below conditions with the Super class method:
+	Method name should be same
+	Argument should be same
+	Return type also should be same
+
+What is meant by Overloading?
+	Ans: Method overloading happens for different classes or within the same class.
+	For method overloading, subclass method should satisfy the below conditions with the Super class method (or) methods in the same class itself:
+	Same method name
+	Different argument type
+	May have different return types
+
+String - StringBuffer(sync)- StringBuilder(not sync) 
+	String : String variables are stored in “constant string pool”. 
+	StringBuilder, String Buffer : Here string values are stored in a stack. If the values are changed then the new value replaces the older value.
+
+Protected vs Default
+	Default : package access
+	Protected: package access + (if extends then accessed to outside pck also)
+	
+Make class immutable 
+	Declare the class as final so it can’t be extended.
+	Make all fields private so that direct access is not allowed.
+	Don’t provide setter methods for variables
+	Make all mutable fields final so that it’s value can be assigned only once.
+	Initialize all the fields via a constructor performing deep copy.
+	Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+	
+Question 1) What is difference between Vector and ArrayList in Java?
+Answer : One of the most popular Java question at 2 years experience level which aims to check your knowledge on Java collection API. key point to mention is synchronization and speed, since ArrayList is not synchronized its fast compare to Vector. See Vector vs ArrayList in Java for more difference between both of them.
+
+Question 2) What is difference in LinkedList and ArrayList in Java?
+Answer : If you don't get previous Java question then you are likely to get this question at 2 to 3 years experience level Java interview. Unlike synchronization, key point to mention here is underlying data structure. See LinkedList vs ArrayList in Java for detail answer of this java question.
+
+3) What is difference between fail-fast and fail-safe Iterator in Java?
+This is relatively new Java question compare to previous ones but increasingly getting popular into 2 to 3 years level Java interviews. key difference here is that fail-fast Iterator throw ConcurrentModificationException while fail-safe doesn't. See fail-safe vs fail-fast Iterator in Java for more differences between two.
+
+4) Difference between throw and throws in Java?
+This Java question belongs to Exception handling category which is another popular category for 2 to 4 years experienced Java programmer. Main difference between these two is that one declares exception thrown by a Java method while other is actually used to throw Exception. See Difference between throw and throws in Java for full answer of this Java exception handling question.
+
+5) What is difference between checked and unchecked Exception in Java.
+Another java interview question for 2 to 4 years experienced Java programmer from Exception handling. key point to mention here is that checked Exception requires mandatory exception handling code while unchecked doesn't. See  checked vs unchecked Exception in Java for more differences.
+
+6) Write code to print Fibonacci series in Java?
+You are bound to expect some coding interview question in Java interview for 2 to 4 years experience. Though Fibonacci series is one of the most classical and popular question not every Java programmer is able to do it correctly in interview, things get more complicated if interviewer ask to do this by using recursion. So better to prepare for approach, See how to write Java program for Fibonacci series using recursion for details and code example.
+
+7) Write Java program to reverse String in Java without using StringBuffer?
+Another Java coding interview question asked on 2 ot 4 years experienced Java developer. Many times interviewer specifically mentioned that you can not use StringBuffer because it has reverse() method which makes this taks trivial. So you must know how to do this by using iteration as well as recursion to perform well. Look at Java program to reverse String in Java for full code sample and explanation.
+
+8) What is difference between Runnable and Thread in Java ?
+Frequently asked Java interview question on 2 to 4 years experienced level from Threading fundamentals. there are two ways to implement Thread in Java, in fact three e..g extending java.lang.Thread class or implementing java.lang.Runnable or Callable interface. See Thread vs Runnable in Java for exact differences on following each approach.
+
+9) What happens if you don't call wait and notify from synchronized block?
+Another common Java interview question from multi-threding and inter thread communication. As I said earlier you must know concept of wait and notify in Java if you have worked for 2 to 3 years in Java. Check why wait and notify needs to call from synchronized block for exact reason to answer this Java question.
+
+10) Write code to solve producer consumer problem in Java.
+A good java question in my opinion which is mix of threading, synchronization, inter-thread communication and coding abilities. This particular java question can make any body's list at any day, not just 2 to 4 years experienced programmer. despite being so common it has something on it which confuse average programmer and allow you to differentiate between good and average programmer. See Producer consumer problem solving using BlockingQueue in Java for full code example.
+
+References
+	https://www.java67.com/2012/10/java-interview-questions-for-2-to-3-4-years-experienced.html
+	

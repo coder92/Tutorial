@@ -1,0 +1,25 @@
+features
+	1. group messaging
+	2. sent+delevered + read 
+	3. online/last seen
+	4. image sharing
+	5. one to one chatting
+
+A -> Gateway ->B
+A->gateway 1
+B->Gateway 2
+Gateway service (micro service)
+
+A->Gateway1->(send msg to B)->Sessions->(check B in DB and send msg to Gateway 2->send it to B)->DB
+B->Gateway2->Sessions->DB 
+C->Gateway3->Sessions->DB
+
+Note: HTTP is client to server protocol so from sending msg from db to B is not possible this way. 
+	so one way is to use long polling (every few second B asks to server about any msgs)-> in real time -this is not meaningful.
+	solution: TCP (Web sockets)
+	sent msg to A (delieverd) from server
+
+LastTime user active
+	B->server->(when A last online)->keep this info in some db
+	Last seen service 
+	two type of msgs -> sent by user | app sent => user sent msgs should be going to last seen service

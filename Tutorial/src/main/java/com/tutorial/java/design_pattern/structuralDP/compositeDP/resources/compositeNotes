@@ -1,0 +1,4 @@
+Composite pattern should be applied only when the group of objects should behave as the single object.
+Composite design pattern can be used to create a tree like structure.
+java.awt.Container#add(Component) is a great example of Composite pattern in java and used a lot in Swing.
+	

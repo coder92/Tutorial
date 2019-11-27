@@ -1,0 +1,13 @@
+Greedy Applications
+• Sorting: Selection sort, Topological sort
+• Priority Queues: Heap sort
+• Huffman coding compression algorithm
+• Prim’s and Kruskal’s algorithms
+• Shortest path in Weighted Graph [Dijkstra’s]
+• Coin change problem
+• Fractional Knapsack problem
+• Disjoint sets-UNION by size and UNION by height (or rank)
+• Job scheduling algorithm
+• Greedy techniques can be used as an approximation algorithm for complex problems
+
+

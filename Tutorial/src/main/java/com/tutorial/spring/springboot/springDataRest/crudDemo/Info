@@ -1,0 +1,12 @@
+Why spring-data-jpa 
+
+it removed most of  the boiler plate code;
+
+just need to add spring-data-rest dependency 
+
+it will expose the rest points taken from spring-data-jpa interface 
+
+just need of dao and entity pck 
+
+
+

@@ -1,0 +1,24 @@
+
+Tree
+{
+	Strict Binary Tree: A binary tree is called strict binary tree if each node has exactly two children or no children.
+	Full Binary Tree: A binary tree is called full binary tree if each node has exactly two children and all leaf nodes are at the same level.
+	Complete Binary Tree: A binary tree is called complete binary tree if all leaf nodes are at height h or h – 1 and also without any missing number in the sequence.
+
+	Properties of Binary Trees:
+		The number of nodes n in a full binary tree is 2h+1 – 1.
+	PreOrder Traversal
+		Recursive : Time Complexity: O(n). Space Complexity: O(n).
+		Non-Recursive : Time Complexity: O(n). Space Complexity: O(n).
+	InOrder Traversal
+		Recursive: Time Complexity: O(n). Space Complexity: O(n).
+		Non-Recursive : Time Complexity: O(n). Space Complexity: O(n).
+	PostOrder Traversal
+		Recursive: Time Complexity: O(n). Space Complexity: O(n).
+		Non-Recursive : Time Complexity: O(n). Space Complexity: O(n).
+	Level Order Traversal
+		Time Complexity: O(n). Space Complexity: O(n).
+}
+	
+
+
