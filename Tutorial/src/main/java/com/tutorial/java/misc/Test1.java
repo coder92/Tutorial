@@ -6,8 +6,7 @@ public class Test1 {
 		byte x = 12;
 		byte y = 13;
 		
-		byte r = x+y;
-		System.out.println(x+y);
+		
 	}
 	
 	

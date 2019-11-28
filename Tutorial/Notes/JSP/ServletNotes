@@ -1,0 +1,3 @@
+Servlet is an Interface : provide init, service, destroy 
+	Generic Servlet: any protocol
+	HTTP Servlet : only HTTP Protocol : GET, POST, DELETE, PUT method support

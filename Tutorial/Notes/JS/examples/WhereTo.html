@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function myFunction() {
+		document.getElementById("demo").innerHTML = "Paragraph changed.";
+	}
+</script>
+</head>
+<body>
+
+	<h1>script tag in head</h1>
+	<p id="demo">A Paragraph</p>
+	<button type="button" onclick="myFunction()">Try it</button>
+
+	<h1>script tag in body</h1>
+	<p id="demo2">In the body</p>
+	<button type="button" onclick="myFunction2()">Try it</button>
+	<script>
+		function myFunction2() {
+			document.getElementById("demo2").innerHTML = "Inbody Paragraph changed.";
+		}
+	</script>
+
+
+	<h1>script tag in external file</h1>
+
+	<p id="demo3">A Paragraph.</p>
+
+	<button type="button" onclick="myFunction3()">Try it</button>
+
+	<p>(myFunction is stored in an external file called "whereto.js")</p>
+
+	<script src="whereto.js"></script>
+
+
+</body>
+</html>

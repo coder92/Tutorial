@@ -1,0 +1,103 @@
+Java-Connect
+{
+    Maven
+    {
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.10.1</version>
+        </dependency>
+    }
+    JavaCode for connection
+    {
+        MongoCredential adminDBCredential = MongoCredential.createCredential(mongoDBUserName, authenticationDatabase, mongoDBPassword.toCharArray());
+        ArrayList <MongoCredential> credentials = new ArrayList<MongoCredential>();
+        credentials.add(adminDBCredential);
+        mongoClient = buildMongoClient(credentials, clientSSLOptions, mongoClient);
+
+        buildMongoClient()
+        {
+            ServerAddress seed = new ServerAddress(getMongoDBHost(), Integer.parseInt(getMongoDBPort()));
+            ArrayList<ServerAddress> seeds = new ArrayList<ServerAddress>(1);
+            mongoClient = new MongoClient(seeds, credentials, options);
+        }
+    }
+    
+}
+
+Commands
+{
+    
+    mongod instance with auth 
+        1)mongod --auth --port 27017 --dbpath /var/lib/mongodb
+        2)mongod --config /etc/mongod.conf --auth 
+
+    Login
+        mongo -u cavisson -p cavisson --authenticationDatabase db1
+
+    CreateUser
+        db.createUser({user:"root",pwd:"root", roles:[{role:"root", db:"admin"}]})
+        db.createUser({user:"user_cluster",pwd:"cluster", roles:[{role:"clusterMonitor", db:"admin"}]})
+        db.createUser({user:"user_admin",pwd:"admin", roles:[{role:"dbAdmin", db:"admin"}]})
+    roles
+    {
+        read
+        readWrite
+        clusterMonitor
+        dbAdmin
+        userAdminAnyDatabase
+        readWriteAnyDatabase
+        root
+    }
+
+    Misc
+    {
+        show users
+        db.runCommand({connectionStatus : 1})
+        db.adminCommand( { shutdown: 1 } )
+        db.runCommand({serverStatus:1})
+    }
+}
+
+MongoDB-Docker-Setup
+{
+    docker pull mongo:4.0.4
+    docker run -d -p 27017:27017 --name mongodb mongo:4.0.4
+    docker exec -it mongodb bash
+}
+
+docker mongo replica setup 
+{
+        https://www.sohamkamani.com/blog/2016/06/30/docker-mongo-replica-set/
+
+        docker network ls
+        docker network create my-mongo-cluster
+        docker run -p 30001:27017 --name mongo1 mongo:4.0.4 --net my-mongo-cluster mongo mongod --replSet my-mongo-set
+        docker run -p 30002:27017 --name mongo2 mongo:4.0.4 --net my-mongo-cluster mongo mongod --replSet my-mongo-set
+
+        docker exec -it mongo1 mongo
+            {
+                > db = (new Mongo('localhost:27017')).getDB('test')
+                test
+                > config = {
+                    "_id" : "my-mongo-set",
+                    "members" : [
+                        {
+                            "_id" : 0,
+                            "host" : "mongo1:27017"
+                        },
+                        {
+                            "_id" : 1,
+                            "host" : "mongo2:27017"
+                        }
+                    ]
+                }
+
+                > rs.initiate(config)
+            }
+    }
+
+
+    docker image prune -a } for deleting all unused docker images 
+}

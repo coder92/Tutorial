@@ -1,0 +1,46 @@
+docker installation
+    docker pull mysql/mysql-server:latest
+    docker images
+    docker run --name=mysql1 -d mysql/mysql-server:latest
+    docker exec -it mysql1 mysql -uroot -p
+
+Queries
+    CREATE TABLE STUDENT(ID INT PRIMARY KEY,NAME VARCHAR(255));
+    INSERT INTO STUDENT VALUES(1, 'ANKIT');
+
+create database employee;
+show databases;
+use employee;
+DROP DATABASE database_name;  
+
+example
+{
+    {
+    --mysql create table
+    create table Users(
+    id  int(3) primary key,
+    name varchar(20),
+    email varchar(20),
+    country varchar(20),
+    password varchar(20)
+    );
+    
+    --oracle create table
+    create table Users(
+    id  number(3) primary key,
+    name varchar2(20),
+    email varchar2(20),
+    country varchar2(20),
+    password varchar2(20)
+    );
+        
+    --insert rows
+    INSERT INTO Users (id, name, email, country, password) 
+    VALUES (1, 'Pankaj', 'pankaj@apple.com', 'India', 'pankaj123');
+    INSERT INTO Users (id, name, email, country, password) 
+    VALUES (4, 'David', 'david@gmail.com', 'USA', 'david123');
+    INSERT INTO Users (id, name, email, country, password) 
+    VALUES	(5, 'Raman', 'raman@google.com', 'UK', 'raman123');
+    commit;
+    }
+}
